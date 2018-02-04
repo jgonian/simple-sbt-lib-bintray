@@ -1,3 +1,5 @@
+logLevel := Level.Debug
+
 scalaVersion := "2.11.12"
 
 //resolvers += Resolver.bintrayRepo("jgonian", "maven-repo")
