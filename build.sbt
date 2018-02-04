@@ -1,6 +1,6 @@
 scalaVersion := "2.11.12"
 
-resolvers += Resolver.bintrayRepo("jgonian", "maven-repo")
+//resolvers += Resolver.bintrayRepo("jgonian", "maven-repo")
 
 lazy val root = (project in file("."))
   .settings(
@@ -16,15 +16,14 @@ lazy val root = (project in file("."))
         connection = "scm:git:ssh://git@github.com:jgonian/simple-sbt-lib-bintray.git"
       )
     ),
-    // see: https://github.com/sbt/sbt-bintray/issues/94
-    //publishTo := Some("jgonian-maven-repo" at "https://api.bintray.com/maven/jgonian/maven-repo/simple-sbt-lib-bintray/;publish=1"),
+    publishTo := Some("jgonian-maven-repo" at "https://api.bintray.com/maven/jgonian/maven-repo/simple-sbt-lib-bintray/;publish=1"),
     licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
     publishMavenStyle := true,
     publishArtifact in (Compile, packageDoc) := false, // disable publishing the main API jar
-    pomIncludeRepository := { _ => false },
+    pomIncludeRepository := { _ => false }
 
       // bintray config
-    bintrayOrganization := Some("jgonian"),
-    bintrayRepository := "maven-repo",
-    bintrayPackage := "simple-sbt-lib-bintray"
+//    bintrayOrganization := Some("jgonian"),
+//    bintrayRepository := "maven-repo",
+//    bintrayPackage := "simple-sbt-lib-bintray"
 )
