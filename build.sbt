@@ -1,10 +1,11 @@
+import sbtrelease.ReleasePlugin.autoImport.releaseCommitMessage
+import sbtrelease.ReleasePlugin.runtimeVersion
+
 logLevel := Level.Debug
 
 scalaVersion := "2.11.12"
 
 crossScalaVersions := Seq("2.11.12", "2.12.4")
-
-//resolvers += Resolver.bintrayRepo("jgonian", "maven-repo")
 
 lazy val root = (project in file("."))
   .settings(
@@ -26,10 +27,7 @@ lazy val root = (project in file("."))
     publishMavenStyle := true,
     publishArtifact in (Compile, packageDoc) := false, // disable publishing the main API jar
     pomIncludeRepository := { _ => false },
-    fork := false
-
-      // bintray config
-//    bintrayOrganization := Some("jgonian"),
-//    bintrayRepository := "maven-repo",
-//    bintrayPackage := "simple-sbt-lib-bintray"
+    fork := false,
+    releaseCommitMessage := s"[sbt-release] Setting version to ${(version in ThisBuild).value}",
+    releaseTagName := s"${name.value}-${runtimeVersion.value}"
 )
