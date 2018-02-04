@@ -2,6 +2,8 @@ logLevel := Level.Debug
 
 scalaVersion := "2.11.12"
 
+crossScalaVersions := Seq("2.11.12", "2.12.4")
+
 //resolvers += Resolver.bintrayRepo("jgonian", "maven-repo")
 
 lazy val root = (project in file("."))
