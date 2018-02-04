@@ -7,5 +7,11 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.0.3" % "test" withSources() withJavadoc(),
       "org.scalacheck" %% "scalacheck" % "1.13.4" % "test" withSources() withJavadoc()
+    ),
+    scmInfo := Some(
+      ScmInfo(
+        browseUrl = url("https://github.com/jgonian/simple-sbt-lib-bintray"),
+        connection = "scm:git:ssh://git@github.com:jgonian/simple-sbt-lib-bintray.git"
+      )
     )
   )
