@@ -16,6 +16,7 @@ lazy val root = (project in file("."))
     ),
     publishTo := Some("bintray" at "https://api.bintray.com/maven/jgonian/maven-repo/simple-sbt-lib-bintray/;publish=1"),
     credentials += Credentials(Path.userHome / ".sbt" / ".bintray-credentials"),
+    licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
     publishMavenStyle := true,
     publishArtifact in (Compile, packageDoc) := false, // disable publishing the main API jar
     pomIncludeRepository := { _ => false }
