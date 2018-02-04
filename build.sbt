@@ -25,7 +25,8 @@ lazy val root = (project in file("."))
     licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
     publishMavenStyle := true,
     publishArtifact in (Compile, packageDoc) := false, // disable publishing the main API jar
-    pomIncludeRepository := { _ => false }
+    pomIncludeRepository := { _ => false },
+    fork := false
 
       // bintray config
 //    bintrayOrganization := Some("jgonian"),
